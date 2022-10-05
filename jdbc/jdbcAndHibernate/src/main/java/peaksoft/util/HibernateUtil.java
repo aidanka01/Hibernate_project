@@ -27,7 +27,7 @@ public class HibernateUtil {
     private static SessionFactory buildSessionFactory() {
         Properties prop = new Properties();
 
-        prop.setProperty("connection.driver_class", "org.postgresql.Driver");
+        prop.setProperty("hibernate.connection.driver_class", "org.postgresql.Driver");
         prop.setProperty("hibernate.connection.url", "jdbc:postgresql://localhost:5432/database_hibernate");
         prop.setProperty("hibernate.connection.username", "postgres");
         prop.setProperty("hibernate.connection.password", "123456");

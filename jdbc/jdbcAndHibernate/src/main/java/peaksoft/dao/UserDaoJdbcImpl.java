@@ -50,7 +50,7 @@ public class UserDaoJdbcImpl implements UserDao {
             statement3.setString(2, lastName);
             statement3.setByte(3, age);
             statement3.executeUpdate();
-            System.out.println("Added to user_base " + name);
+            System.out.println("Added to users_hibernate " + name);
         }catch(SQLException e){
             System.out.println(e.getMessage());
         }
