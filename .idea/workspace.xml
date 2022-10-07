@@ -4,19 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9ba87e2-8467-47bb-8e4d-05e99aeb53a5" name="Changes" comment="push">
+    <list default="true" id="b9ba87e2-8467-47bb-8e4d-05e99aeb53a5" name="Changes" comment="finished">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c0edc694-877a-4fab-9984-950187eecd02.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c0edc694-877a-4fab-9984-950187eecd02.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c0edc694-877a-4fab-9984-950187eecd02/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c0edc694-877a-4fab-9984-950187eecd02/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/src/main/java/peaksoft/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/src/main/java/peaksoft/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/src/main/java/peaksoft/dao/UserDaoHibernateImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/src/main/java/peaksoft/dao/UserDaoHibernateImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/src/main/java/peaksoft/dao/UserDaoJdbcImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/src/main/java/peaksoft/dao/UserDaoJdbcImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/src/main/java/peaksoft/service/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/src/main/java/peaksoft/service/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/src/main/java/peaksoft/util/HibernateUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/src/main/java/peaksoft/util/HibernateUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/src/test/java/peaksoft/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/src/test/java/peaksoft/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/target/classes/peaksoft/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/target/classes/peaksoft/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/target/classes/peaksoft/dao/UserDaoHibernateImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/target/classes/peaksoft/dao/UserDaoHibernateImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/target/classes/peaksoft/dao/UserDaoJdbcImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/target/classes/peaksoft/dao/UserDaoJdbcImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/target/test-classes/peaksoft/UserServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/target/test-classes/peaksoft/UserServiceTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/target/classes/peaksoft/service/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/jdbc/jdbcAndHibernate/target/classes/peaksoft/service/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +77,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="JUnit.UserServiceTest.removeUserById">
+  <component name="RunManager" selected="JUnit.UserServiceTest">
     <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="jdbcAndHibernate" />
       <extension name="coverage">
@@ -89,6 +89,22 @@
       <option name="PACKAGE_NAME" value="peaksoft" />
       <option name="MAIN_CLASS_NAME" value="peaksoft.UserServiceTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest.cleanUsersTable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jdbcAndHibernate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="peaksoft.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="peaksoft" />
+      <option name="MAIN_CLASS_NAME" value="peaksoft.UserServiceTest" />
+      <option name="METHOD_NAME" value="cleanUsersTable" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,29 +157,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest.saveUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="jdbcAndHibernate" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="peaksoft.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="peaksoft" />
-      <option name="MAIN_CLASS_NAME" value="peaksoft.UserServiceTest" />
-      <option name="METHOD_NAME" value="saveUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceTest.removeUserById" />
-        <item itemvalue="JUnit.UserServiceTest.dropUsersTable" />
         <item itemvalue="JUnit.UserServiceTest" />
         <item itemvalue="JUnit.UserServiceTest.getAllUsers" />
-        <item itemvalue="JUnit.UserServiceTest.saveUser" />
+        <item itemvalue="JUnit.UserServiceTest.dropUsersTable" />
+        <item itemvalue="JUnit.UserServiceTest.cleanUsersTable" />
+        <item itemvalue="JUnit.UserServiceTest.removeUserById" />
       </list>
     </recent_temporary>
   </component>
@@ -203,6 +203,14 @@
       <workItem from="1664897502770" duration="1868000" />
       <workItem from="1664902380096" duration="2167000" />
       <workItem from="1665005150457" duration="397000" />
+      <workItem from="1665005715679" duration="253000" />
+      <workItem from="1665057914149" duration="182000" />
+      <workItem from="1665058151969" duration="944000" />
+      <workItem from="1665061940283" duration="2349000" />
+      <workItem from="1665072408564" duration="413000" />
+      <workItem from="1665073532932" duration="2019000" />
+      <workItem from="1665142436524" duration="44000" />
+      <workItem from="1665143214545" duration="4189000" />
     </task>
     <task id="LOCAL-00001" summary="1st commit">
       <created>1664291665015</created>
@@ -232,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664807450066</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="finished">
+      <created>1665005765975</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665005765975</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,9 +267,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1st commit" />
     <MESSAGE value="2nd commit project done" />
-    <MESSAGE value="finished" />
     <MESSAGE value="push" />
-    <option name="LAST_COMMIT_MESSAGE" value="push" />
+    <MESSAGE value="finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

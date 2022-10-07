@@ -22,7 +22,7 @@ public class Main {
 
 
         // REMOVE users BY ID
-        userDaoHibernate.removeUserById(2);
+        userDaoHibernate.removeUserById(95);
 
         // GET ALL users
         userDaoHibernate.getAllUsers();
@@ -35,6 +35,35 @@ public class Main {
         //DROP TABLE users
         userDaoHibernate.dropUsersTable();
 
+
+
+
+
+       /* // JDBC users
+        UserDaoJdbcImpl userDaoJdbc = new UserDaoJdbcImpl();
+
+        //CREATE TABLE
+        userDaoJdbc.createUsersTable();
+
+        // ADD USERS
+        userDaoJdbc.saveUser("Azema", "Kadyrova", (byte) 26);
+        userDaoJdbc.saveUser("Aidana", "Kadyrova", (byte) 23);
+        userDaoJdbc.saveUser("Tariel", "Kadyrov", (byte) 21);
+        userDaoJdbc.saveUser("Avtandil", "Kadyrov", (byte) 19);
+
+        // CLEAN users TABLE
+        userDaoJdbc.cleanUsersTable();
+
+        // REMOVE users BY ID
+        userDaoJdbc.removeUserById(1);
+
+        // GET ALL users
+        userDaoJdbc.getAllUsers();
+        List<User> userList = userDaoJdbc.getAllUsers();
+        System.out.println(userList);
+
+        // DROP TABLE users
+        userDaoJdbc.dropUsersTable();*/
 
     }
 }

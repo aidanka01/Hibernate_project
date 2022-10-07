@@ -50,7 +50,7 @@ public class UserDaoJdbcImpl implements UserDao {
             statement3.setString(2, lastName);
             statement3.setByte(3, age);
             statement3.executeUpdate();
-            System.out.println("Added to users_hibernate " + name);
+            System.out.println("Added to users " + name);
         }catch(SQLException e){
             System.out.println(e.getMessage());
         }
@@ -90,7 +90,7 @@ public class UserDaoJdbcImpl implements UserDao {
 
 
     public void cleanUsersTable() {
-        String SQL_CLEAN = "TRUNCATE TABLE users";
+        String SQL_CLEAN = "TRUNCATE TABLE users2";
         try(Connection connect = connect();
             Statement statement = connect.createStatement()){
             statement.executeUpdate(SQL_CLEAN);

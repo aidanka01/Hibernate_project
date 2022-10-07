@@ -33,7 +33,7 @@ public class HibernateUtil {
         prop.setProperty("hibernate.connection.password", "123456");
         prop.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         prop.setProperty("hibernate.show_sql", "true");
-        prop.setProperty("hibernate.hbm2ddl.auto", "update");
+        prop.setProperty("hibernate.hbm2ddl.auto", "validate");
         Configuration cfg = new Configuration();
         cfg.addAnnotatedClass(peaksoft.model.User.class);
         cfg.setProperties(prop);

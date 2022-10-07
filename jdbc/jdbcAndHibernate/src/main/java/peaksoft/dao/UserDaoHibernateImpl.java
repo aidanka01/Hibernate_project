@@ -1,6 +1,8 @@
 package peaksoft.dao;
 
+import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import peaksoft.model.User;
 import peaksoft.util.HibernateUtil;
 
@@ -25,15 +27,13 @@ public class UserDaoHibernateImpl implements UserDao {
         }
     }
 
-
     @Override
     public void dropUsersTable() {
         try {
             Session session = HibernateUtil.getSession().openSession();
             session.beginTransaction();
-
-            session.createSQLQuery("drop table users_hibernate").executeUpdate();
-
+            Query query = session.createQuery("delete from User");
+            query.executeUpdate();
             session.getTransaction().commit();
             session.close();
             System.out.println("TABLE users dropped successfully");
@@ -42,17 +42,15 @@ public class UserDaoHibernateImpl implements UserDao {
         }
     }
 
-
     @Override
     public void saveUser(String name, String lastName, byte age) {
         try {
-            User user = new User(name, lastName, age);
             Session session = HibernateUtil.getSession().openSession();
             session.beginTransaction();
-            session.save(user);
+            session.save(new User(name, lastName, age));
             session.getTransaction().commit();
             session.close();
-            System.out.println("users saved successfully!");
+            System.out.println("Users saved successfully!");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -61,19 +59,15 @@ public class UserDaoHibernateImpl implements UserDao {
     @Override
     public void removeUserById(long id) {
         try {
-            Session session =
-                    HibernateUtil.getSession().openSession();
-            session.beginTransaction();
-            User user = (User) session.get(User.class, id);
-            session.delete(user);
-            session.getTransaction().commit();
-            session.close();
-            System.out.println("Successfully deleted " + user);
+            Session session = HibernateUtil.getSession().openSession();
+            Transaction transaction = session.beginTransaction();
+            session.createSQLQuery("delete from  users where id = " + id).executeUpdate();
+            transaction.commit();
+            System.out.println("Successfully deleted user by id " + id);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
-
 
     @Override
     public List<User> getAllUsers() {
@@ -83,12 +77,12 @@ public class UserDaoHibernateImpl implements UserDao {
             List<User> userList = session.createQuery("from User").list();
             session.getTransaction().commit();
             session.close();
-            System.out.println("Found " + userList.size() + " users");
-
+            System.out.println("Found " + userList + " users");
             return userList;
         } catch (Exception r) {
             System.out.println(r.getMessage());
         }
+
         return null;
     }
 
@@ -97,7 +91,8 @@ public class UserDaoHibernateImpl implements UserDao {
         try {
             Session session = HibernateUtil.getSession().openSession();
             session.beginTransaction();
-            session.createQuery("delete  User").executeUpdate();
+            Query query = session.createQuery("delete from User");
+            query.executeUpdate();
             session.getTransaction().commit();
             session.close();
             System.out.println("TABLE users cleaned successfully");
@@ -105,4 +100,5 @@ public class UserDaoHibernateImpl implements UserDao {
             System.out.println(e.getMessage());
         }
     }
+
 }
